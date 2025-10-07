@@ -17,6 +17,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { image } from "framer-motion/client";
 
 export function NavbarDemo() {
   const navItems = [
@@ -88,21 +89,21 @@ export default function Hero() {
       title: "Three Star Restaurant",
       subtitle:
         "Experience exceptional cuisine crafted with passion and served with excellence",
-      image: "/images/hero-1.jpg", // Add your images to public/images/
+      image: "/public/carousal-1.jpg", // Add your images to public/images/
       gradient: "from-orange-600 to-orange-800",
     },
     {
       title: "Authentic Flavors",
       subtitle:
         "Discover traditional recipes reimagined with modern culinary techniques",
-      image: "/images/hero-2.jpg",
+      image: "/carousal-1.jpg",
       gradient: "from-red-600 to-orange-700",
     },
     {
       title: "Fine Dining ",
       subtitle:
         "Where every meal becomes a memorable celebration of taste and elegance",
-      image: "/images/hero-3.jpg",
+      image: "/carousal-2.jpg",
       gradient: "from-amber-600 to-orange-800",
     },
   ];
@@ -208,6 +209,18 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
+                {slides[currentSlide].title && slides[currentSlide].image && (
+                  <motion.img
+                    src={slides[currentSlide].image}
+                    alt={slides[currentSlide].title}
+                    sizes="lg"
+                    className="absolute inset-0 object-cover w-full h-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                )}
                 {slides[currentSlide].title}
               </motion.h1>
 
