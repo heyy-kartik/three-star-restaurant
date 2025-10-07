@@ -13,14 +13,14 @@ export const sampleMenuItems: MenuItem[] = [
     reviews: [
       {
         id: "1",
-        author: "John Doe",
+        author: "Chaitanya Karmalkar",
         rating: 5,
         comment: "Absolutely delicious! Fresh ingredients and perfect seasoning.",
         date: "2024-01-15"
       },
       {
         id: "2",
-        author: "Jane Smith",
+        author: "Rohit shelke",
         rating: 4,
         comment: "Great starter, would order again!",
         date: "2024-01-10"
@@ -37,7 +37,7 @@ export const sampleMenuItems: MenuItem[] = [
     reviews: [
       {
         id: "3",
-        author: "Mike Johnson",
+        author: "Jayesh Badgujar",
         rating: 4,
         comment: "Classic Caesar done right. Fresh and crispy.",
         date: "2024-01-12"
@@ -64,14 +64,14 @@ export const sampleMenuItems: MenuItem[] = [
     reviews: [
       {
         id: "4",
-        author: "Sarah Wilson",
+        author: "Kartik jagdale",
         rating: 5,
-        comment: "Best salmon I've ever had! Perfectly cooked and seasoned.",
+        comment: "Perfectly cooked and seasoned.",
         date: "2024-01-18"
       },
       {
         id: "5",
-        author: "David Brown",
+        author: "Siddant Patil",
         rating: 5,
         comment: "Exceptional quality and presentation.",
         date: "2024-01-14"
@@ -89,7 +89,7 @@ export const sampleMenuItems: MenuItem[] = [
     reviews: [
       {
         id: "6",
-        author: "Robert Taylor",
+        author: "Vaibhav Jadhav",
         rating: 5,
         comment: "Melt-in-your-mouth tender. Worth every penny!",
         date: "2024-01-20"
@@ -106,7 +106,7 @@ export const sampleMenuItems: MenuItem[] = [
     reviews: [
       {
         id: "7",
-        author: "Emily Davis",
+        author: "Vishal gaikwad ",
         rating: 5,
         comment: "Authentic Italian taste. So creamy and delicious!",
         date: "2024-01-16"
@@ -133,7 +133,7 @@ export const sampleMenuItems: MenuItem[] = [
     reviews: [
       {
         id: "8",
-        author: "Lisa Anderson",
+        author: "Harshraj Mourya ",
         rating: 5,
         comment: "Heavenly! The perfect balance of coffee and sweetness.",
         date: "2024-01-19"
@@ -150,7 +150,7 @@ export const sampleMenuItems: MenuItem[] = [
     reviews: [
       {
         id: "9",
-        author: "Chris Martinez",
+        author: "Prasad Revgade",
         rating: 5,
         comment: "Decadent and rich. A chocolate lover's dream!",
         date: "2024-01-17"
