@@ -182,7 +182,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 For questions or support, reach out to:
 - Email: info@threestar.com
-- Phone: +1-555-123-4567
+- Phone: +919766646790
 
 ---
 

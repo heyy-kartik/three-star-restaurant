@@ -1,37 +1,38 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import MenuItemCard from "./MenuItemCard"
-import { MenuItem, menuCategories, MenuCategory } from "@/lib/types"
-import { Loader2 } from "lucide-react"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import MenuItemCard from "./MenuItemCard";
+import { MenuItem, menuCategories, MenuCategory } from "@/lib/types";
+import { Loader2 } from "lucide-react";
 
 export default function Menu() {
-  const [selectedCategory, setSelectedCategory] = useState<MenuCategory>("All")
-  const [menuItems, setMenuItems] = useState<MenuItem[]>([])
-  const [loading, setLoading] = useState(true)
+  const [selectedCategory, setSelectedCategory] = useState<MenuCategory>("All");
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchMenuItems()
+    fetchMenuItems();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCategory])
+  }, [selectedCategory]);
 
   const fetchMenuItems = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const url = selectedCategory === "All" 
-        ? "/api/menu" 
-        : `/api/menu?category=${selectedCategory}`
-      const response = await fetch(url)
-      const data = await response.json()
-      setMenuItems(data)
+      const url =
+        selectedCategory === "All"
+          ? "/api/menu"
+          : `/api/menu?category=${selectedCategory}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      setMenuItems(data);
     } catch (error) {
-      console.error("Error fetching menu items:", error)
+      console.error("Error fetching menu items:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <section id="menu" className="py-20 bg-white">
@@ -43,9 +44,12 @@ export default function Menu() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Menu</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Our Menu
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover our carefully crafted dishes, made with the finest ingredients
+            Discover our carefully crafted dishes, made with the finest
+            ingredients
           </p>
         </motion.div>
 
@@ -84,10 +88,12 @@ export default function Menu() {
 
         {!loading && menuItems.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-xl text-gray-500">No items found in this category.</p>
+            <p className="text-xl text-gray-500">
+              No items found in this category.
+            </p>
           </div>
         )}
       </div>
     </section>
-  )
+  );
 }

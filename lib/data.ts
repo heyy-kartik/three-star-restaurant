@@ -3,7 +3,7 @@ import { MenuItem, Offer } from "./types"
 export const sampleMenuItems: MenuItem[] = [
   // Appetizers
   {
-    name: "Chai ",
+    name: "Chai",
     description: "Toasted bread topped with fresh tomatoes, basil, and mozzarella",
     category: "Appetizers",
     price: 12.99,
@@ -15,15 +15,15 @@ export const sampleMenuItems: MenuItem[] = [
         id: "1",
         author: "Chaitanya Karmalkar",
         rating: 5,
-        comment: "Absolutely delicious! Fresh ingredients and perfect seasoning.",
-        date: "2024-01-15"
+        comment: "Absolutely delicious! Fresh ingredients and perfect Swad.",
+        date: "2025-01-15"
       },
       {
         id: "2",
         author: "Rohit shelke",
         rating: 4,
         comment: "Great starter, would order again!",
-        date: "2024-01-10"
+        date: "2025-01-10"
       }
     ]
   },
@@ -52,9 +52,59 @@ export const sampleMenuItems: MenuItem[] = [
     image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
     rating: 4.7,
   },
+  //maggi 
+   {
+    name: "Plain Maggi",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Maggi",
+    price: 39,
+    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    rating: 4.7,
+  },
+   {
+    name: "Masala Maggi / Peri Peri maggi",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Maggi",
+    price: 49,
+    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    rating: 4.7,
+  },
+   {
+    name: "Veggy Maggi",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Maggi",
+    price: 59,
+    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    rating: 4.7,
+  },
+   {
+    name: "Cheese Maggi",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Maggi",
+    price: 59,
+    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    rating: 4.7,
+  },
+   {
+    name: "Tadka Maggi",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Maggi",
+    price: 69,
+    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    rating: 4.7,
+  },
+   {
+    name: "Anda tadka maggi",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Maggi",
+    price: 89,
+    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    rating: 4.7,
+  },
+ 
   // Main Course
   {
-    name: "Grilled Salmon",
+    name: "Pohe",
     description: "Atlantic salmon grilled to perfection with lemon butter sauce",
     category: "Main Course",
     price: 28.99,
@@ -79,7 +129,7 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },
   {
-    name: "Ribeye Steak",
+    name: "Plain Omlette",
     description: "12oz premium ribeye with garlic mashed potatoes and vegetables",
     category: "Main Course",
     price: 42.99,
@@ -97,8 +147,8 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },
   {
-    name: "Pasta Carbonara",
-    description: "Creamy pasta with bacon, egg, and parmesan cheese",
+    name: "Anda Bhurgi Pav",
+    description: "Spicy scrambled eggs served with buttered pav",
     category: "Main Course",
     price: 18.99,
     image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
@@ -114,7 +164,31 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },
   {
-    name: "Chicken Parmesan",
+    name: "VEG Triple Rice",
+    description: "Breaded chicken breast with marinara sauce and melted cheese",
+    category: "Main Course  ",
+    price: 22.99,
+    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
+    rating: 4.4,
+  },
+   {
+    name: "VEG Singapuri Rice",
+    description: "Breaded chicken breast with marinara sauce and melted cheese",
+    category: "Main Course",
+    price: 22.99,
+    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
+    rating: 4.4,
+  },
+   {
+    name: "VEG Triple Rice",
+    description: "Breaded chicken breast with marinara sauce and melted cheese",
+    category: "Main Course || Non veg",
+    price: 22.99,
+    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
+    rating: 4.4,
+  },
+   {
+    name: "VEG Manchurian Rice",
     description: "Breaded chicken breast with marinara sauce and melted cheese",
     category: "Main Course",
     price: 22.99,
@@ -123,7 +197,7 @@ export const sampleMenuItems: MenuItem[] = [
   },
   // Desserts
   {
-    name: "Tiramisu",
+    name: "Veg Shejwan Rice",
     description: "Classic Italian dessert with coffee-soaked ladyfingers and mascarpone",
     category: "Desserts",
     price: 9.99,
@@ -141,7 +215,7 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },
   {
-    name: "Chocolate Lava Cake",
+    name: "Veg Fried Rice",
     description: "Warm chocolate cake with a molten center, served with vanilla ice cream",
     category: "Desserts",
     price: 11.99,
@@ -158,7 +232,7 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },
   {
-    name: "Crème Brûlée",
+    name: "Veg Noddles",
     description: "Creamy vanilla custard with caramelized sugar topping",
     category: "Desserts",
     price: 10.99,
@@ -182,14 +256,7 @@ export const sampleMenuItems: MenuItem[] = [
     image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
     rating: 4.5,
   },
-  {
-    name: "Red Wine",
-    description: "Selection of premium red wines",
-    category: "Beverages",
-    price: 12.99,
-    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80",
-    rating: 4.7,
-  },
+ 
 ]
 
 export const sampleOffers: Offer[] = [

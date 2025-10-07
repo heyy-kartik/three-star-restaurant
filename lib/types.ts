@@ -29,10 +29,12 @@ export interface Offer {
 
 export const menuCategories = [
   "All",
-  "Appetizers",
+  "Maggi",
   "Main Course",
-  "Desserts",
+  "Veg",
+  "Non Veg", 
   "Beverages",
+
 ] as const
 
 export type MenuCategory = typeof menuCategories[number]

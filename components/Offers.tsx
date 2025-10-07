@@ -1,32 +1,44 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Offer } from "@/lib/types"
-import Image from "next/image"
-import { Tag, Clock } from "lucide-react"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+import { EmblaOptionsType } from "embla-carousel";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Offer } from "@/lib/types";
+import Image from "next/image";
+import { Tag, Clock } from "lucide-react";
+import EmblaCarousel from "./EmblaCarousel";
 
 export default function Offers() {
-  const [offers, setOffers] = useState<Offer[]>([])
+  const [offers, setOffers] = useState<Offer[]>([]);
 
   useEffect(() => {
-    fetchOffers()
-  }, [])
+    fetchOffers();
+  }, []);
 
   const fetchOffers = async () => {
     try {
-      const response = await fetch("/api/offers")
-      const data = await response.json()
-      setOffers(data)
+      const response = await fetch("/api/offers");
+      const data = await response.json();
+      setOffers(data);
     } catch (error) {
-      console.error("Error fetching offers:", error)
+      console.error("Error fetching offers:", error);
     }
-  }
+  };
 
   return (
-    <section id="offers" className="py-20 bg-gradient-to-br from-orange-50 to-white">
+    <section
+      id="offers"
+      className="py-20 bg-gradient-to-br from-orange-50 to-white"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +47,9 @@ export default function Offers() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Special Offers</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Special Offers
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Don&apos;t miss out on our exclusive deals and seasonal promotions
           </p>
@@ -64,16 +78,21 @@ export default function Offers() {
                     {offer.discount}
                   </div>
                 </div>
-                
+
                 <CardHeader>
                   <CardTitle className="text-2xl">{offer.title}</CardTitle>
-                  <CardDescription className="text-base">{offer.description}</CardDescription>
+                  <CardDescription className="text-base">
+                    {offer.description}
+                  </CardDescription>
                 </CardHeader>
-                
+
                 <CardContent>
                   <div className="flex items-center gap-2 text-sm text-gray-500">
                     <Clock className="w-4 h-4" />
-                    <span>Valid until {new Date(offer.validUntil).toLocaleDateString()}</span>
+                    <span>
+                      Valid until{" "}
+                      {new Date(offer.validUntil).toLocaleDateString()}
+                    </span>
                   </div>
                 </CardContent>
               </Card>
@@ -82,5 +101,5 @@ export default function Offers() {
         </div>
       </div>
     </section>
-  )
+  );
 }
