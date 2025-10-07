@@ -5,8 +5,8 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Chai",
     description: "Toasted bread topped with fresh tomatoes, basil, and mozzarella",
-    category: "Appetizers",
-    price: 12.99,
+    category: "Beverages",
+    price: 15,
     image: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=800&q=80",
     popular: true,
     rating: 4.5,
@@ -31,7 +31,7 @@ export const sampleMenuItems: MenuItem[] = [
     name: "Coffee",
     description: "Rich and aromatic coffee brewed to perfection",
     category: "Beverages",
-    price: 4.99,
+    price: 25,
     image: "https://images.unsplash.com/photo-1511920170033-4b8c8c8c8c8c?w=800&q=80",
     rating: 4.5,
     reviews: [
@@ -48,7 +48,7 @@ export const sampleMenuItems: MenuItem[] = [
     name: "Cold Coffee",
     description: "Chilled coffee blended with ice and milk",
     category: "Beverages",
-    price: 7.99,
+    price: 29,
     image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
     rating: 4.7,
   },
@@ -107,7 +107,7 @@ export const sampleMenuItems: MenuItem[] = [
     name: "Pohe",
     description: "Atlantic salmon grilled to perfection with lemon butter sauce",
     category: "Main Course",
-    price: 28.99,
+    price: 25,
     image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80",
     popular: true,
     rating: 4.8,
@@ -156,7 +156,75 @@ export const sampleMenuItems: MenuItem[] = [
     reviews: [
       {
         id: "7",
-        author: "Vishal gaikwad ",
+        author: "Vishal gaikwad",
+        rating: 5,
+        comment: "Authentic Italian taste. So creamy and delicious!",
+        date: "2024-01-16"
+      }
+    ]
+  },
+  {
+    name: "Fries Salted",
+    description: "Crispy French fries seasoned with salt",
+    category: "Main Course",
+    price: 79,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    rating: 4.6,
+    reviews: [
+      {
+        id: "7",
+        author: "Vishal gaikwad",
+        rating: 5,
+        comment: "Authentic Italian taste. So creamy and delicious!",
+        date: "2024-01-16"
+      }
+    ]
+  },
+  {
+    name: "Peri peri Fries",
+    description: "Spicy scrambled eggs served with buttered pav",
+    category: "Main Course",
+    price: 79,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    rating: 4.6,
+    reviews: [
+      {
+        id: "7",
+        author: "Vishal gaikwad",
+        rating: 5,
+        comment: "Authentic Italian taste. So creamy and delicious!",
+        date: "2024-01-16"
+      }
+    ]
+  },
+  {
+    name: "vEG Sandwich ",
+    description: "Spicy scrambled eggs served with buttered pav",
+    category: "Main Course",
+    price: 18.99,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    rating: 4.6,
+    reviews: [
+      {
+        id: "7",
+        author: "Vishal gaikwad",
+        rating: 5,
+        comment: "Authentic Italian taste. So creamy and delicious!",
+        date: "2024-01-16"
+      }
+    ]
+  },
+  {
+    name: "Veg Grilled Sandwich",
+    description: "Grilled sandwich with mixed vegetables and cheese",
+    category: "Main Course",
+    price: 69,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    rating: 4.6,
+    reviews: [
+      {
+        id: "7",
+        author: "Vishal gaikwad",
         rating: 5,
         comment: "Authentic Italian taste. So creamy and delicious!",
         date: "2024-01-16"
@@ -179,14 +247,7 @@ export const sampleMenuItems: MenuItem[] = [
     image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
     rating: 4.4,
   },
-   {
-    name: "VEG Triple Rice",
-    description: "Breaded chicken breast with marinara sauce and melted cheese",
-    category: "Main Course || Non veg",
-    price: 22.99,
-    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
-    rating: 4.4,
-  },
+   
    {
     name: "VEG Manchurian Rice",
     description: "Breaded chicken breast with marinara sauce and melted cheese",

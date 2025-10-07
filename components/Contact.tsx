@@ -118,24 +118,6 @@ export default function Contact() {
                 </a>
               </CardContent>
             </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                  <MessageCircle className="w-6 h-6 text-orange-600" />
-                </div>
-                <CardTitle>Live Chat</CardTitle>
-                <CardDescription>
-                  Available during business hours
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button variant="outline" className="w-full">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Start Chat
-                </Button>
-              </CardContent>
-            </Card>
           </motion.div>
 
           {/* Contact Form */}
