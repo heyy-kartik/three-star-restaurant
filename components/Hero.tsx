@@ -1,16 +1,25 @@
-"use client"
+/* eslint-disable react/no-children-prop */
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
-
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { Navbar, NavBody } from "./ui/resizable-navbar";
 export default function Hero() {
   const scrollToMenu = () => {
-    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })
-  }
+    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-white to-orange-50 overflow-hidden">
+      {/* PLACE NAVBAR AT TOP OF HERO */}
+      <div className="absolute top-6 left-0 right-0 z-20">
+        <div className="container mx-auto px-4">
+          <Navbar />
+        </div>
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -56,13 +65,16 @@ export default function Hero() {
             </motion.h1>
           </motion.div>
 
+          {/* removed duplicate <Navbar /> from here */}
+
           <motion.p
             className="text-xl md:text-2xl text-gray-700 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Experience exceptional cuisine crafted with passion and served with excellence
+            Experience exceptional cuisine crafted with passion and served with
+            excellence
           </motion.p>
 
           <motion.div
@@ -74,7 +86,16 @@ export default function Hero() {
             <Button size="lg" onClick={scrollToMenu} className="text-lg px-8">
               View Menu
             </Button>
-            <Button size="lg" variant="outline" onClick={() => document.getElementById("offers")?.scrollIntoView({ behavior: "smooth" })} className="text-lg px-8">
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() =>
+                document
+                  .getElementById("offers")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="text-lg px-8"
+            >
               Special Offers
             </Button>
           </motion.div>
@@ -97,5 +118,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

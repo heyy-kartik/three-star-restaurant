@@ -3,7 +3,7 @@ import { MenuItem, Offer } from "./types"
 export const sampleMenuItems: MenuItem[] = [
   // Appetizers
   {
-    name: "Bruschetta",
+    name: "Chai ",
     description: "Toasted bread topped with fresh tomatoes, basil, and mozzarella",
     category: "Appetizers",
     price: 12.99,
@@ -28,12 +28,12 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },
   {
-    name: "Caesar Salad",
-    description: "Crisp romaine lettuce with parmesan, croutons, and Caesar dressing",
-    category: "Appetizers",
-    price: 10.99,
-    image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800&q=80",
-    rating: 4.3,
+    name: "Coffee",
+    description: "Rich and aromatic coffee brewed to perfection",
+    category: "Beverages",
+    price: 4.99,
+    image: "https://images.unsplash.com/photo-1511920170033-4b8c8c8c8c8c?w=800&q=80",
+    rating: 4.5,
     reviews: [
       {
         id: "3",
@@ -45,9 +45,9 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },
   {
-    name: "Garlic Bread",
-    description: "Oven-baked bread with butter, garlic, and herbs",
-    category: "Appetizers",
+    name: "Cold Coffee",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Beverages",
     price: 7.99,
     image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
     rating: 4.7,
