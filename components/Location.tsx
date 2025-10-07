@@ -1,37 +1,37 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { MapPin, Navigation } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { MapPin, Navigation } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Location() {
   const restaurantLocation = {
-    lat: 40.7580,
-    lng: -73.9855,
-    address: "123 Gourmet Street, Culinary City, CC 12345"
-  }
+    lat: 18.464933970400068,
+    lng: 73.83564001450652,
+    address: "Hotel 3 star, Sinhgad Institute Rd, Pune, Maharashtra 411041",
+  };
 
   const openInMaps = () => {
-    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${restaurantLocation.lat},${restaurantLocation.lng}`
-    window.open(mapsUrl, "_blank")
-  }
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${restaurantLocation.lat},${restaurantLocation.lng}`;
+    window.open(mapsUrl, "_blank");
+  };
 
   const getDirections = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${position.coords.latitude},${position.coords.longitude}&destination=${restaurantLocation.lat},${restaurantLocation.lng}`
-          window.open(directionsUrl, "_blank")
+          const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${position.coords.latitude},${position.coords.longitude}&destination=${restaurantLocation.lat},${restaurantLocation.lng}`;
+          window.open(directionsUrl, "_blank");
         },
         () => {
           // Fallback if geolocation fails
-          openInMaps()
+          openInMaps();
         }
-      )
+      );
     } else {
-      openInMaps()
+      openInMaps();
     }
-  }
+  };
 
   return (
     <section id="location" className="py-20 bg-white">
@@ -43,7 +43,9 @@ export default function Location() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Find Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Find Us
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Visit us and experience exceptional dining in a beautiful location
           </p>
@@ -61,33 +63,28 @@ export default function Location() {
                 <MapPin className="w-8 h-8 text-orange-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Our Address</h3>
-                  <p className="text-lg text-gray-700">{restaurantLocation.address}</p>
+                  <p className="text-lg text-gray-700">
+                    {restaurantLocation.address}
+                  </p>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <Button 
-                  onClick={getDirections} 
-                  className="w-full"
-                  size="lg"
-                >
+                <Button onClick={getDirections} className="w-full">
                   <Navigation className="w-5 h-5 mr-2" />
                   Get Directions
                 </Button>
-                
-                <Button 
-                  onClick={openInMaps} 
-                  variant="outline"
-                  className="w-full"
-                  size="lg"
-                >
+
+                <Button onClick={openInMaps} className="w-full">
                   <MapPin className="w-5 h-5 mr-2" />
                   View on Map
                 </Button>
               </div>
 
               <div className="mt-6 p-4 bg-white rounded-lg border border-orange-200">
-                <h4 className="font-semibold mb-2 text-orange-800">Quick Info:</h4>
+                <h4 className="font-semibold mb-2 text-orange-800">
+                  Quick Info:
+                </h4>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Free parking available</li>
                   <li>• Wheelchair accessible</li>
@@ -119,5 +116,5 @@ export default function Location() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,47 +1,58 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-import { Phone, Mail, MessageCircle, Send } from "lucide-react"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Phone, Mail, MessageCircle, Send } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: ""
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setSubmitted(true)
-    setFormData({ name: "", email: "", phone: "", message: "" })
-    
-    // Reset submitted state after 3 seconds
-    setTimeout(() => setSubmitted(false), 3000)
-  }
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+    setFormData({ name: "", email: "", phone: "", message: "" });
+
+    // Reset submitted state after 3 seconds
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
-    }))
-  }
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-orange-50 to-white">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-orange-50 to-white"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,9 +61,12 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Contact Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Contact Us
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+            Have questions? We&apos;d love to hear from you. Send us a message
+            and we&apos;ll respond as soon as possible.
           </p>
         </motion.div>
 
@@ -74,12 +88,12 @@ export default function Contact() {
                 <CardDescription>Mon-Fri from 8am to 5pm</CardDescription>
               </CardHeader>
               <CardContent>
-                <a 
-                  href="tel:+15551234567" 
+                <a
+                  href="tel:+919766646790"
                   className="text-orange-600 hover:text-orange-700 font-semibold flex items-center gap-2"
                 >
                   <Phone className="w-4 h-4" />
-                  +1-555-123-4567
+                  +919766646790
                 </a>
               </CardContent>
             </Card>
@@ -90,11 +104,13 @@ export default function Contact() {
                   <Mail className="w-6 h-6 text-orange-600" />
                 </div>
                 <CardTitle>Email Us</CardTitle>
-                <CardDescription>We&apos;ll get back to you within 24 hours</CardDescription>
+                <CardDescription>
+                  We&apos;ll get back to you within 24 hours
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <a 
-                  href="mailto:info@threestar.com" 
+                <a
+                  href="mailto:info@threestar.com"
                   className="text-orange-600 hover:text-orange-700 font-semibold flex items-center gap-2"
                 >
                   <Mail className="w-4 h-4" />
@@ -109,7 +125,9 @@ export default function Contact() {
                   <MessageCircle className="w-6 h-6 text-orange-600" />
                 </div>
                 <CardTitle>Live Chat</CardTitle>
-                <CardDescription>Available during business hours</CardDescription>
+                <CardDescription>
+                  Available during business hours
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button variant="outline" className="w-full">
@@ -131,7 +149,9 @@ export default function Contact() {
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-2xl">Send us a message</CardTitle>
-                <CardDescription>Fill out the form below and we&apos;ll get back to you shortly</CardDescription>
+                <CardDescription>
+                  Fill out the form below and we&apos;ll get back to you shortly
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 {submitted ? (
@@ -143,8 +163,12 @@ export default function Contact() {
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Send className="w-8 h-8 text-green-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-green-600 mb-2">Message Sent!</h3>
-                    <p className="text-gray-600">Thank you for contacting us. We&apos;ll respond soon.</p>
+                    <h3 className="text-2xl font-bold text-green-600 mb-2">
+                      Message Sent!
+                    </h3>
+                    <p className="text-gray-600">
+                      Thank you for contacting us. We&apos;ll respond soon.
+                    </p>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -186,7 +210,7 @@ export default function Contact() {
                         id="phone"
                         name="phone"
                         type="tel"
-                        placeholder="+1-555-123-4567"
+                        placeholder="+91____"
                         value={formData.phone}
                         onChange={handleChange}
                       />
@@ -207,9 +231,9 @@ export default function Contact() {
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      className="w-full" 
+                    <Button
+                      type="submit"
+                      className="w-full"
                       size="lg"
                       disabled={isSubmitting}
                     >
@@ -230,5 +254,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
