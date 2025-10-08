@@ -15,9 +15,17 @@ import {
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-import { image } from "framer-motion/client";
+import useEmblaCarousel from "embla-carousel-react";
+import { EmblaOptionsType } from "embla-carousel";
+import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import {
+  PrevButton,
+  NextButton,
+  usePrevNextButtons,
+} from "./EmblaCarouselArrowButton";
+import "./embla.css";
 
 export function NavbarDemo() {
   const navItems = [
@@ -81,53 +89,110 @@ export function NavbarDemo() {
   );
 }
 
-export default function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+// Hero Carousel Component
+const HeroCarousel = () => {
+  const options: EmblaOptionsType = { loop: true };
 
   const slides = [
     {
-      title: "Three Star Restaurant",
-      subtitle:
-        "Experience exceptional cuisine crafted with passion and served with excellence",
-      image: "/public/carousal-1.jpg", // Add your images to public/images/
-      gradient: "from-orange-600 to-orange-800",
-    },
-    {
-      title: "Authentic Flavors",
-      subtitle:
-        "Discover traditional recipes reimagined with modern culinary techniques",
       image: "/carousal-1.jpg",
-      gradient: "from-red-600 to-orange-700",
+      alt: "Three Star Restaurant Interior",
     },
     {
-      title: "Fine Dining ",
-      subtitle:
-        "Where every meal becomes a memorable celebration of taste and elegance",
       image: "/carousal-2.jpg",
-      gradient: "from-amber-600 to-orange-800",
+      alt: "Delicious Food",
+    },
+    {
+      image: "/carousal-1.jpg",
+      alt: "Restaurant Ambiance",
     },
   ];
 
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+
+  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+    useDotButton(emblaApi);
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const autoplay = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 4000);
+
+    return () => clearInterval(autoplay);
+  }, [emblaApi]);
+
+  return (
+    <div className="w-full h-full">
+      <div className="embla h-full">
+        <div className="embla__viewport h-full" ref={emblaRef}>
+          <div className="embla__container h-full">
+            {slides.map((slide, index) => (
+              <div className="embla__slide h-full" key={index}>
+                <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+                  <Image
+                    src={slide.image}
+                    alt={slide.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                    priority={index === 0}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Carousel Controls */}
+        <div className="embla__controls mt-6">
+          <div className="embla__buttons">
+            <PrevButton
+              onClick={onPrevButtonClick}
+              disabled={prevBtnDisabled}
+            />
+            <NextButton
+              onClick={onNextButtonClick}
+              disabled={nextBtnDisabled}
+            />
+          </div>
+
+          <div className="embla__dots">
+            {scrollSnaps.map((_, index) => (
+              <DotButton
+                key={index}
+                onClick={() => onDotButtonClick(index)}
+                className={"embla__dot".concat(
+                  index === selectedIndex ? " embla__dot--selected" : ""
+                )}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default function Hero() {
   const scrollToMenu = () => {
     document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const scrollToOffers = () => {
+    document.getElementById("offers")?.scrollIntoView({ behavior: "smooth" });
   };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  // Auto-play carousel
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
       {/* NAVBAR AT TOP */}
       <div className="absolute top-6 left-0 right-0 z-20">
         <div className="container mx-auto px-4">
@@ -135,166 +200,123 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* CAROUSEL BACKGROUND */}
-      <div className="absolute inset-0">
-        <AnimatePresence mode="wait">
+      {/* MAIN CONTENT - Two Column Layout */}
+      <div className="container mx-auto px-4 pt-32 pb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-12rem)]">
+          {/* LEFT SIDE - Carousel */}
           <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.7 }}
-            className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-orange-50"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1"
           >
-            {/* Background decoration for current slide */}
-            <motion.div
-              className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-orange-100 to-transparent rounded-full opacity-30"
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 90, 0],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-            <motion.div
-              className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-orange-100 to-transparent rounded-full opacity-30"
-              animate={{
-                scale: [1.2, 1, 1.2],
-                rotate: [90, 0, 90],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
+            <div className="h-[400px] lg:h-[500px]">
+              <HeroCarousel />
+            </div>
           </motion.div>
-        </AnimatePresence>
-      </div>
 
-      {/* CAROUSEL NAVIGATION */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-6 h-6 text-orange-600" />
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-6 h-6 text-orange-600" />
-      </button>
-
-      {/* MAIN CONTENT */}
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0, y: 30 }}
+          {/* RIGHT SIDE - Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="order-1 lg:order-2 text-center lg:text-left"
+          >
+            <motion.h1
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-orange-800 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <motion.h1
-                className={`text-2xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${slides[currentSlide].gradient} bg-clip-text text-transparent`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                {slides[currentSlide].title && slides[currentSlide].image && (
-                  <motion.img
-                    src={slides[currentSlide].image}
-                    alt={slides[currentSlide].title}
-                    sizes="lg"
-                    className="absolute inset-0 object-cover w-full h-full"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6 }}
-                  />
-                )}
-                {slides[currentSlide].title}
-              </motion.h1>
+              Three Star Restaurant
+            </motion.h1>
 
-              <motion.p
-                className="text-xl md:text-lg text-gray-700 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                {slides[currentSlide].subtitle}
-              </motion.p>
-            </motion.div>
-          </AnimatePresence>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <Button size="lg" onClick={scrollToMenu} className="text-lg px-8">
-              View Menu
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() =>
-                document
-                  .getElementById("offers")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="text-lg px-8"
+            <motion.p
+              className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Special Offers
-            </Button>
-          </motion.div>
+              Experience exceptional cuisine crafted with passion and served
+              with excellence. Where every meal becomes a memorable celebration
+              of taste and elegance.
+            </motion.p>
 
-          {/* CAROUSEL INDICATORS */}
-          <motion.div
-            className="flex justify-center mt-8 space-x-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  index === currentSlide
-                    ? "bg-orange-600 scale-110"
-                    : "bg-orange-300 hover:bg-orange-400"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </motion.div>
-
-          <motion.div
-            className="mt-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
+            {/* Buttons */}
             <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="inline-block cursor-pointer"
-              onClick={scrollToMenu}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <ChevronDown className="w-8 h-8 text-orange-600" />
+              <Button
+                size="lg"
+                onClick={scrollToMenu}
+                className="text-lg px-8 py-3 bg-orange-600 hover:bg-orange-700"
+              >
+                View Menu
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={scrollToOffers}
+                className="text-lg px-8 py-3 border-orange-600 text-orange-600 hover:bg-orange-50"
+              >
+                Special Offers
+              </Button>
+            </motion.div>
+
+            {/* Scroll Down Indicator */}
+            <motion.div
+              className="flex justify-center lg:justify-start"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+            >
+              <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="inline-block cursor-pointer group"
+                onClick={scrollToMenu}
+              >
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-sm text-gray-500 group-hover:text-orange-600 transition-colors">
+                    Scroll to explore
+                  </span>
+                  <ChevronDown className="w-6 h-6 text-orange-600 group-hover:text-orange-700 transition-colors" />
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
+      </div>
+
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-br from-orange-200/30 to-transparent rounded-full"
+          animate={{
+            scale: [1, 1.1, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-orange-200/20 to-transparent rounded-full"
+          animate={{
+            scale: [1.1, 1, 1.1],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
       </div>
     </section>
   );

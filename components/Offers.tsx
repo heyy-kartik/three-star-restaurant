@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-import { EmblaOptionsType } from "embla-carousel";
 import {
   Card,
   CardContent,
@@ -15,7 +13,6 @@ import { Badge } from "@/components/ui/badge";
 import { Offer } from "@/lib/types";
 import Image from "next/image";
 import { Tag, Clock } from "lucide-react";
-import EmblaCarousel from "./EmblaCarousel";
 
 export default function Offers() {
   const [offers, setOffers] = useState<Offer[]>([]);
@@ -55,50 +52,51 @@ export default function Offers() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {offers.map((offer, index) => (
-            <motion.div
-              key={offer.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="overflow-hidden h-full hover:shadow-xl transition-shadow">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={offer.image}
-                    alt={offer.title}
-                    fill
-                    className="object-cover transition-transform duration-300 hover:scale-110"
-                  />
-                  <div className="absolute top-4 right-4 bg-orange-600 text-white px-4 py-2 rounded-lg font-bold shadow-lg">
-                    <Tag className="w-4 h-4 inline mr-1" />
-                    {offer.discount}
-                  </div>
-                </div>
+        {/* Sample Image with Heading "10" */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center mb-12"
+        >
+          <Card className="max-w-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="relative">
+              <Image
+                src="/carousal-1.jpg"
+                alt="Special Offer"
+                width={400}
+                height={200}
+                className="object-cover w-full h-64"
+              />
+              <div className="absolute top-4 left-4">
+                <Badge className="bg-orange-600 text-white font-bold text-lg px-3 py-1">
+                  10% OFF
+                </Badge>
+              </div>
+            </div>
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-gray-900">
+                Special Offer
+              </CardTitle>
+              <CardDescription className="text-gray-600">
+                Amazing discount on our signature dishes
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <Clock className="w-4 h-4" />
+                <span>Valid until December 31, 2024</span>
+              </div>
+              <div className="flex items-center gap-2 mt-2">
+                <Tag className="w-4 h-4 text-orange-600" />
+                <span className="font-semibold text-orange-600">10% OFF</span>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
 
-                <CardHeader>
-                  <CardTitle className="text-2xl">{offer.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {offer.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent>
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
-                    <Clock className="w-4 h-4" />
-                    <span>
-                      Valid until{" "}
-                      {new Date(offer.validUntil).toLocaleDateString()}
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        {/* Existing Offers Grid */}
       </div>
     </section>
   );

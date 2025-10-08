@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import MenuItemCard from "./MenuItemCard";
+import Searchbar from "./Searchbar";
 import { MenuItem, MenuCategory } from "@/lib/types";
 import { Loader2 } from "lucide-react";
 import { sampleMenuItems } from "@/lib/data";
 
 export default function Menu() {
   const [selectedCategory, setSelectedCategory] = useState<MenuCategory>("All");
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [allMenuItems, setAllMenuItems] = useState<MenuItem[]>([]);
   const [filteredItems, setFilteredItems] = useState<MenuItem[]>([]);
   const [availableCategories, setAvailableCategories] = useState<
@@ -23,7 +25,7 @@ export default function Menu() {
 
   useEffect(() => {
     filterItems();
-  }, [selectedCategory, allMenuItems]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [selectedCategory, searchQuery, allMenuItems]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchMenuItems = async () => {
     setLoading(true);
@@ -65,20 +67,40 @@ export default function Menu() {
   };
 
   const filterItems = () => {
-    if (selectedCategory === "All") {
-      setFilteredItems(allMenuItems);
-      return;
+    let filtered = allMenuItems;
+
+    // Filter by category first
+    if (selectedCategory !== "All") {
+      filtered = filtered.filter((item) => {
+        if (Array.isArray(item.category)) {
+          return item.category.some((cat) => cat.trim() === selectedCategory);
+        } else {
+          return item.category.trim() === selectedCategory;
+        }
+      });
     }
 
-    const filtered = allMenuItems.filter((item) => {
-      if (Array.isArray(item.category)) {
-        return item.category.some((cat) => cat.trim() === selectedCategory);
-      } else {
-        return item.category.trim() === selectedCategory;
-      }
-    });
+    // Then filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      filtered = filtered.filter((item) => {
+        // Search in name
+        const nameMatch = Array.isArray(item.name)
+          ? item.name.some((name) => name.toLowerCase().includes(query))
+          : item.name.toLowerCase().includes(query);
+
+        // Search in description
+        const descriptionMatch = item.description.toLowerCase().includes(query);
+
+        return nameMatch || descriptionMatch;
+      });
+    }
 
     setFilteredItems(filtered);
+  };
+
+  const handleSearchChange = (query: string) => {
+    setSearchQuery(query);
   };
 
   return (
@@ -94,10 +116,25 @@ export default function Menu() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             Our Menu
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
             Discover our carefully crafted dishes, made with the finest
             ingredients
           </p>
+
+          {/* Search Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mb-8"
+          >
+            <Searchbar
+              onSearchChange={handleSearchChange}
+              searchValue={searchQuery}
+              placeholder="Search for dishes, ingredients, or cuisines..."
+            />
+          </motion.div>
         </motion.div>
 
         {/* Category Filter */}
@@ -106,7 +143,7 @@ export default function Menu() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-8"
         >
           {availableCategories.map((category) => (
             <Button
@@ -119,6 +156,33 @@ export default function Menu() {
             </Button>
           ))}
         </motion.div>
+
+        {/* Results Counter */}
+        {!loading && (searchQuery || selectedCategory !== "All") && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center mb-6"
+          >
+            <p className="text-gray-600">
+              {filteredItems.length} item{filteredItems.length !== 1 ? "s" : ""}{" "}
+              found
+              {searchQuery && ` for "${searchQuery}"`}
+              {selectedCategory !== "All" && ` in ${selectedCategory}`}
+            </p>
+            {(searchQuery || selectedCategory !== "All") && (
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedCategory("All");
+                }}
+                className="text-orange-600 hover:text-orange-700 text-sm mt-1 underline"
+              >
+                Clear filters
+              </button>
+            )}
+          </motion.div>
+        )}
 
         {/* Menu Items Grid */}
         {loading ? (
@@ -135,9 +199,29 @@ export default function Menu() {
 
         {!loading && filteredItems.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-xl text-gray-500">
-              No items found in this category.
-            </p>
+            <div className="max-w-md mx-auto">
+              <p className="text-xl text-gray-500 mb-4">
+                {searchQuery
+                  ? `No items found matching "${searchQuery}"`
+                  : selectedCategory !== "All"
+                  ? `No items found in ${selectedCategory} category`
+                  : "No items found"}
+              </p>
+              {searchQuery && (
+                <p className="text-gray-400 mb-4">
+                  Try searching for different keywords or browse our categories
+                </p>
+              )}
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedCategory("All");
+                }}
+                className="text-orange-600 hover:text-orange-700 underline"
+              >
+                View all items
+              </button>
+            </div>
           </div>
         )}
       </div>
