@@ -1,19 +1,20 @@
-import type { Metadata } from "next"
-import "./globals.css"
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Three Star Restaurant - Fine Dining Experience",
-  description: "Experience exceptional cuisine with our carefully curated menu and outstanding service",
-}
+  title: "3 Star Restaurant - Fine Dining Experience",
+  description:
+    "Experience exceptional cuisine with our carefully curated menu and outstanding service",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className="font-sans antialiased">{children}</body>
     </html>
-  )
+  );
 }

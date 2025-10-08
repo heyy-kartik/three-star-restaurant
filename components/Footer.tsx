@@ -95,9 +95,9 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300">+919766646790</p>
+                  <p className="text-gray-300">+919168377416</p>
                   <a
-                    href="tel:+919766646790"
+                    href="tel:+919168377416"
                     className="text-sm text-orange-400 hover:underline"
                   >
                     Call Now

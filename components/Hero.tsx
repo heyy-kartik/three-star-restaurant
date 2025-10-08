@@ -95,15 +95,15 @@ const HeroCarousel = () => {
 
   const slides = [
     {
-      image: "/carousal-1.jpg",
-      alt: "Three Star Restaurant Interior",
+      image: "/carosual-1.jpg",
+      alt: "3 Star Restaurant Interior",
     },
     {
-      image: "/carousal-2.jpg",
+      image: "/carosual-2.jpg",
       alt: "Delicious Food",
     },
     {
-      image: "/carousal-1.jpg",
+      image: "/carosual-1.jpg",
       alt: "Restaurant Ambiance",
     },
   ];
@@ -228,7 +228,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Three Star Restaurant
+              3 Star Restaurant
             </motion.h1>
 
             <motion.p

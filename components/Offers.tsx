@@ -63,7 +63,7 @@ export default function Offers() {
           <Card className="max-w-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="relative">
               <Image
-                src="/carousal-1.jpg"
+                src="/carosual-1.jpg"
                 alt="Special Offer"
                 width={400}
                 height={200}
