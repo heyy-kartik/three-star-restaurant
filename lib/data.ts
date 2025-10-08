@@ -5,7 +5,7 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Chai",
     description: "Toasted bread topped with fresh tomatoes, basil, and mozzarella",
-    category: "Beverages",
+    category: "Snack",
     price: 15,
     image: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=800&q=80",
     popular: true,
@@ -30,7 +30,7 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Coffee",
     description: "Rich and aromatic coffee brewed to perfection",
-    category: "Beverages",
+    category: "Snack",
     price: 25,
     image: "https://images.unsplash.com/photo-1511920170033-4b8c8c8c8c8c?w=800&q=80",
     rating: 4.5,
@@ -39,7 +39,7 @@ export const sampleMenuItems: MenuItem[] = [
         id: "3",
         author: "Jayesh Badgujar",
         rating: 4,
-        comment: "Classic Caesar done right. Fresh and crispy.",
+        comment: "Classic Caesar done right.",
         date: "2024-01-12"
       }
     ]
@@ -47,7 +47,7 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Cold Coffee",
     description: "Chilled coffee blended with ice and milk",
-    category: "Beverages",
+    category: "Snack",
     price: 29,
     image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
     rating: 4.7,
@@ -106,7 +106,7 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Pohe",
     description: "Atlantic salmon grilled to perfection with lemon butter sauce",
-    category: "Main Course",
+    category: "Snack",
     price: 25,
     image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80",
     popular: true,
@@ -121,7 +121,7 @@ export const sampleMenuItems: MenuItem[] = [
       },
       {
         id: "5",
-        author: "Siddant Patil",
+        author: "Siddhant Patil",
         rating: 5,
         comment: "Exceptional quality and presentation.",
         date: "2024-01-14"
@@ -131,8 +131,61 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Plain Omlette",
     description: "12oz premium ribeye with garlic mashed potatoes and vegetables",
-    category: "Main Course",
-    price: 42.99,
+    category: ["Main Course", "Non Veg"],
+    price: 39,
+    image: "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+    popular: true,
+    rating: 4.9,
+    reviews: [
+      {
+        id: "6",
+        author: "Vaibhav Jadhav",
+        rating: 5,
+        comment: "Melt-in-your-mouth tender. Worth every penny!",
+        date: "2024-01-20"
+      }
+    ]
+  },{
+    name: "Veg Shezwan Rice + Dry Manchurain +1 Coke",
+    description: "12oz premium ribeye with garlic mashed potatoes and vegetables",
+    category: ["Main Course", "Non Veg" , "Combos"],
+    price: 169,
+    image: "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+    popular: true,
+    rating: 4.9,
+    reviews: [
+      {
+        id: "6",
+        author: "Vaibhav Jadhav",
+        rating: 5,
+        comment: "Melt-in-your-mouth tender. Worth every penny!",
+        date: "2024-01-20"
+      }
+    ]
+  },
+  {
+    name: "Burger + Fries + Coke",
+    description: "12oz premium ribeye with garlic mashed potatoes and vegetables",
+    category: ["Main Course", "Non Veg" , "Combos"],
+    price: 135,
+    image: "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+    popular: true,
+    rating: 4.9,
+    reviews: [
+      {
+        id: "6",
+        author: "Vaibhav Jadhav",
+        rating: 5,
+        comment: "Melt-in-your-mouth tender. Worth every penny!",
+        date: "2024-01-20"
+      }
+    ]
+  },
+  {
+    name: "Chicken Shezwan Rice + Chicken Chilli + Coke",
+    description: "12oz premium ribeye with garlic mashed potatoes and vegetables",
+    category: ["Main Course", "Non Veg" , "Combos"],
+    price: 235,
     image: "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
     popular: true,
     rating: 4.9,
@@ -149,8 +202,8 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Anda Bhurgi Pav",
     description: "Spicy scrambled eggs served with buttered pav",
-    category: "Main Course",
-    price: 18.99,
+    category: ["Main Course", "Non Veg"],
+    price:59,
     image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
     rating: 4.6,
     reviews: [
@@ -163,10 +216,28 @@ export const sampleMenuItems: MenuItem[] = [
       }
     ]
   },
+   {
+    name: "Anda Bread ",
+    description: "Spicy scrambled eggs served with buttered pav",
+    category: ["Non Veg"],
+    price:49,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    rating: 4.2,
+    reviews: [
+      {
+        id: "7",
+        author: "Vishal gaikwad",
+        rating: 5,
+        comment: "Authentic Italian taste. So creamy and delicious!",
+        date: "2024-01-16"
+      }
+    ]
+  },
+  // Snack 
   {
     name: "Fries Salted",
     description: "Crispy French fries seasoned with salt",
-    category: "Main Course",
+    category: "Snack",
     price: 79,
     image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
     rating: 4.6,
@@ -183,7 +254,7 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Peri peri Fries",
     description: "Spicy scrambled eggs served with buttered pav",
-    category: "Main Course",
+    category: "Snack",
     price: 79,
     image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
     rating: 4.6,
@@ -198,10 +269,10 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },
   {
-    name: "vEG Sandwich ",
+    name: "VEG Sandwich ",
     description: "Spicy scrambled eggs served with buttered pav",
-    category: "Main Course",
-    price: 18.99,
+    category: ["Snack","Veg"],
+    price: 49,
     image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
     rating: 4.6,
     reviews: [
@@ -217,7 +288,7 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Veg Grilled Sandwich",
     description: "Grilled sandwich with mixed vegetables and cheese",
-    category: "Main Course",
+    category: ["Snack","Veg"],
     price: 69,
     image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
     rating: 4.6,
@@ -234,7 +305,7 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "VEG Triple Rice",
     description: "Breaded chicken breast with marinara sauce and melted cheese",
-    category: "Main Course  ",
+    category: ["Main Course","Veg"],
     price: 22.99,
     image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
     rating: 4.4,
@@ -242,7 +313,7 @@ export const sampleMenuItems: MenuItem[] = [
    {
     name: "VEG Singapuri Rice",
     description: "Breaded chicken breast with marinara sauce and melted cheese",
-    category: "Main Course",
+    category: ["Main Course","Veg"],
     price: 22.99,
     image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
     rating: 4.4,
@@ -251,16 +322,16 @@ export const sampleMenuItems: MenuItem[] = [
    {
     name: "VEG Manchurian Rice",
     description: "Breaded chicken breast with marinara sauce and melted cheese",
-    category: "Main Course",
+    category: ["Main Course","Veg"],
     price: 22.99,
     image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
     rating: 4.4,
   },
-  // Desserts
+  // veg + MAIN COURSE 
   {
     name: "Veg Shejwan Rice",
     description: "Classic Italian dessert with coffee-soaked ladyfingers and mascarpone",
-    category: "Desserts",
+    category: ["Main Course", "Veg"],
     price: 9.99,
     image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80",
     popular: true,
@@ -278,7 +349,7 @@ export const sampleMenuItems: MenuItem[] = [
   {
     name: "Veg Fried Rice",
     description: "Warm chocolate cake with a molten center, served with vanilla ice cream",
-    category: "Desserts",
+    category: ["Main Course", "Veg"],
     price: 11.99,
     image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=800&q=80",
     rating: 4.8,
@@ -293,26 +364,26 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },
   {
-    name: "Veg Noddles",
+    name: "Veg Noodles",
     description: "Creamy vanilla custard with caramelized sugar topping",
-    category: "Desserts",
+    category: ["Main Course","Veg"],
     price: 10.99,
     image: "https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=800&q=80",
     rating: 4.6,
   },
   // Beverages
   {
-    name: "Fresh Lemonade",
+    name: "Coke / Pepsi",
     description: "House-made lemonade with fresh lemons and mint",
-    category: "Beverages",
-    price: 4.99,
+    category: "Snack",
+    price: 20,
     image: "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9f?w=800&q=80",
     rating: 4.3,
   },
   {
-    name: "Espresso",
+    name: "Chicken Noodles",
     description: "Rich Italian espresso made from premium coffee beans",
-    category: "Beverages",
+    category: "Non Veg ",
     price: 3.99,
     image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
     rating: 4.5,

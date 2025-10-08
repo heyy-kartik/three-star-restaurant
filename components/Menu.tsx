@@ -4,34 +4,81 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import MenuItemCard from "./MenuItemCard";
-import { MenuItem, menuCategories, MenuCategory } from "@/lib/types";
+import { MenuItem, MenuCategory } from "@/lib/types";
 import { Loader2 } from "lucide-react";
+import { sampleMenuItems } from "@/lib/data";
 
 export default function Menu() {
   const [selectedCategory, setSelectedCategory] = useState<MenuCategory>("All");
-  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const [allMenuItems, setAllMenuItems] = useState<MenuItem[]>([]);
+  const [filteredItems, setFilteredItems] = useState<MenuItem[]>([]);
+  const [availableCategories, setAvailableCategories] = useState<
+    MenuCategory[]
+  >(["All"]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchMenuItems();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCategory]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    filterItems();
+  }, [selectedCategory, allMenuItems]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchMenuItems = async () => {
     setLoading(true);
     try {
-      const url =
-        selectedCategory === "All"
-          ? "/api/menu"
-          : `/api/menu?category=${selectedCategory}`;
-      const response = await fetch(url);
-      const data = await response.json();
-      setMenuItems(data);
+      // Try to fetch from API first, fallback to sample data
+      try {
+        const response = await fetch("/api/menu");
+        const data = await response.json();
+        setAllMenuItems(data);
+        generateCategories(data);
+      } catch (apiError) {
+        // Fallback to sample data if API fails
+        console.log("API not available, using sample data");
+        setAllMenuItems(sampleMenuItems);
+        generateCategories(sampleMenuItems);
+      }
     } catch (error) {
       console.error("Error fetching menu items:", error);
+      // Use sample data as ultimate fallback
+      setAllMenuItems(sampleMenuItems);
+      generateCategories(sampleMenuItems);
     } finally {
       setLoading(false);
     }
+  };
+
+  const generateCategories = (items: MenuItem[]) => {
+    const categorySet = new Set<string>(["All"]);
+
+    items.forEach((item) => {
+      if (Array.isArray(item.category)) {
+        item.category.forEach((cat) => categorySet.add(cat.trim()));
+      } else {
+        categorySet.add(item.category.trim());
+      }
+    });
+
+    setAvailableCategories(Array.from(categorySet) as MenuCategory[]);
+  };
+
+  const filterItems = () => {
+    if (selectedCategory === "All") {
+      setFilteredItems(allMenuItems);
+      return;
+    }
+
+    const filtered = allMenuItems.filter((item) => {
+      if (Array.isArray(item.category)) {
+        return item.category.some((cat) => cat.trim() === selectedCategory);
+      } else {
+        return item.category.trim() === selectedCategory;
+      }
+    });
+
+    setFilteredItems(filtered);
   };
 
   return (
@@ -61,7 +108,7 @@ export default function Menu() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
-          {menuCategories.map((category) => (
+          {availableCategories.map((category) => (
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
@@ -80,13 +127,13 @@ export default function Menu() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {menuItems.map((item, index) => (
+            {filteredItems.map((item, index) => (
               <MenuItemCard key={index} item={item} />
             ))}
           </div>
         )}
 
-        {!loading && menuItems.length === 0 && (
+        {!loading && filteredItems.length === 0 && (
           <div className="text-center py-20">
             <p className="text-xl text-gray-500">
               No items found in this category.

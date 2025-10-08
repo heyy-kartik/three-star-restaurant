@@ -1,21 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Facebook,
-  Instagram,
-  Twitter,
-} from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="relative bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width={60} height={60} viewBox={0 0 60 60} xmlns={http://www.w3.org/2000/svg}%3E%3Cg  bg-repeat"></div>
+      </div>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+
+      <div className="relative container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <motion.div
@@ -123,7 +124,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Opening Hours & Social */}
+          {/* Opening Hours */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -133,45 +134,25 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-4 text-orange-400">
               Opening Hours
             </h3>
-            <ul className="space-y-2 mb-6">
-              <li className="text-gray-300">
-                <span className="font-semibold">Monday - Friday:</span> 11:00 AM
-                - 10:00 PM
-              </li>
-              <li className="text-gray-300">
-                <span className="font-semibold">Saturday - Sunday:</span> 10:00
-                AM - 11:00 PM
-              </li>
-            </ul>
-
-            <h4 className="text-lg font-semibold mb-3 text-orange-400">
-              Follow Us
-            </h4>
-            <div className="flex gap-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-700 p-2 rounded-full hover:bg-orange-600 transition-colors"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-700 p-2 rounded-full hover:bg-orange-600 transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-700 p-2 rounded-full hover:bg-orange-600 transition-colors"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-gray-300">
+                    <span className="font-semibold">Monday - Friday:</span>
+                  </p>
+                  <p className="text-gray-300">11:00 AM - 10:00 PM</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-gray-300">
+                    <span className="font-semibold">Saturday - Sunday:</span>
+                  </p>
+                  <p className="text-gray-300">10:00 AM - 11:00 PM</p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

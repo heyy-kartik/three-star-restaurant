@@ -73,7 +73,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
             <span>{item.name}</span>
-            <span className="text-orange-600 text-xl">${item.price}</span>
+            <span className="text-orange-600 text-xl">₹{item.price}</span>
           </CardTitle>
           <CardDescription>{item.description}</CardDescription>
         </CardHeader>

@@ -235,9 +235,9 @@ export const NavbarLogo = () => {
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <Image src="/logo3-star.jpg" alt="logo" width={30} height={30} />
+      <Image src="/logo3-star.jpg" alt="logo" width={100} height={90} />
       <span className="font-medium text-black dark:text-white">
-        3 Star Hotel{" "}
+        Hotel 3 Star{" "}
       </span>
     </a>
   );

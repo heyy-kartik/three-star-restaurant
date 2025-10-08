@@ -2,7 +2,7 @@ export interface MenuItem {
   _id?: string
   name: string
   description: string
-  category: string
+  category: string | string[];
   price: number
   image: string
   popular?: boolean
@@ -31,9 +31,10 @@ export const menuCategories = [
   "All",
   "Maggi",
   "Main Course",
-  "Veg",
+  "Combos",
   "Non Veg", 
-  "Beverages",
+  "Snack",
+  
 
 ] as const
 
