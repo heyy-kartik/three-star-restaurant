@@ -44,11 +44,36 @@ export const sampleMenuItems: MenuItem[] = [
       }
     ]
   },
+  
   {
     name: "Cold Coffee",
     description: "Chilled coffee blended with ice and milk",
     category: "Snack",
     price: 29,
+    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    rating: 4.7,
+  },
+  {
+    name: "Tandori Burger",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Snack",
+    price: 59,
+    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    rating: 4.7,
+  },
+  {
+    name: "Cheese Burger",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Snack",
+    price: 70,
+    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    rating: 4.7,
+  },
+  {
+    name: "Aloo Tikki Burger",
+    description: "Chilled coffee blended with ice and milk",
+    category: "Snack",
+    price: 59,
     image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
     rating: 4.7,
   },
@@ -268,6 +293,7 @@ export const sampleMenuItems: MenuItem[] = [
       }
     ]
   },
+  // Veg + Snack
   {
     name: "VEG Sandwich ",
     description: "Spicy scrambled eggs served with buttered pav",
@@ -285,6 +311,75 @@ export const sampleMenuItems: MenuItem[] = [
       }
     ]
   },
+   {
+    name: "VEG Manchurian (Dry)  ",
+    description: "Spicy Manchurian balls served with schezwan sauce",
+    category: ["Snack","Veg"],
+    price: 100 ,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    rating: 4.6,
+    reviews: [
+      {
+        id: "7",
+        author: "Vishal gaikwad",
+        rating: 5,
+        comment: "Authentic Italian taste. So creamy and delicious!",
+        date: "2024-01-16"
+      }
+    ]
+  },
+   {
+    name: "VEG Manchurain Gravy  ",
+    description: "Spicy scrambled eggs served with buttered pav",
+    category: ["Snack","Veg"],
+    price: 110 ,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    rating: 4.6,
+    reviews: [
+      {
+        id: "7",
+        author: "Vishal gaikwad",
+        rating: 5,
+        comment: "Authentic Italian taste. So creamy and delicious!",
+        date: "2024-01-16"
+      }
+    ]
+  },
+   {
+    name: "VEG Paneer Chilli  ",
+    description: "Spicy scrambled eggs served with buttered pav",
+    category: ["Snack","Veg"],
+    price: 150 ,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    rating: 4.6,
+    reviews: [
+      {
+        id: "7",
+        author: "Vishal gaikwad",
+        rating: 5,
+        comment: "Authentic Italian taste. So creamy and delicious!",
+        date: "2024-01-16"
+      }
+    ]
+  },
+   {
+    name: "VEG Paneer Crispy  ",
+    description: "Spicy scrambled eggs served with buttered pav",
+    category: ["Snack","Veg"],
+    price: 150,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    rating: 4.6,
+    reviews: [
+      {
+        id: "7",
+        author: "Vishal",
+        rating: 5,
+        comment: "Authentic Italian taste. So creamy and delicious!",
+        date: "2024-01-16"
+      }
+    ]
+  },
+
   {
     name: "Veg Grilled Sandwich",
     description: "Grilled sandwich with mixed vegetables and cheese",
@@ -306,7 +401,7 @@ export const sampleMenuItems: MenuItem[] = [
     name: "VEG Triple Rice",
     description: "Breaded chicken breast with marinara sauce and melted cheese",
     category: ["Main Course","Veg"],
-    price: 22.99,
+    price: 89,
     image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
     rating: 4.4,
   },
@@ -314,7 +409,7 @@ export const sampleMenuItems: MenuItem[] = [
     name: "VEG Singapuri Rice",
     description: "Breaded chicken breast with marinara sauce and melted cheese",
     category: ["Main Course","Veg"],
-    price: 22.99,
+    price: 89,
     image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
     rating: 4.4,
   },
@@ -388,6 +483,72 @@ export const sampleMenuItems: MenuItem[] = [
     image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
     rating: 4.5,
   },
+   {
+    name: "Chicken Lollipop",
+    description: "Rich Italian espresso made from premium coffee beans",
+    category: "Non Veg ",
+    price: "100 / 170 ",
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    rating: 4.5,
+  },
+   {
+    name: "Chicken 65",
+    description: "Rich Italian espresso made from premium coffee beans",
+    category: "Non Veg ",
+    price: 149 ,
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    rating: 4.5,
+  },
+   {
+    name: "Chicken Chilli Dry",
+    description: "Rich Italian espresso made from premium coffee beans",
+    category: "Non Veg ",
+    price: 149 ,
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    rating: 4.5,
+  },
+   {
+    name: "Chicken Crispy ",
+    description: "Rich Italian espresso made from premium coffee beans",
+    category: "Non Veg ",
+    price: 3.99,
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    rating: 4.5,
+  },
+  
+  {
+    name: "Chicken Shezwan Rice",
+    description: "Rich Italian espresso made from premium coffee beans",
+    category: "Non Veg ",
+    price: "110 / 160" ,
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    rating: 4.5,
+  },
+  {
+    name: "Chicken Tripple Rice",
+    description: "Rich Italian espresso made from premium coffee beans",
+    category: "Non Veg ",
+    price: "130 / 160",
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    rating: 4.5,
+  },
+  {
+    name: "Chicken Singapuri Rice",
+    description: "Rich Italian espresso made from premium coffee beans",
+    category: "Non Veg ",
+    price: "110 / 160",
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    rating: 4.5,
+  },
+  {
+    name: "Chicken Fries Rice",
+    description: "Rich Italian espresso made from premium coffee beans",
+    category: "Non Veg ",
+    price: "100 / 150",
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    rating: 4.5,
+  },
+  
  
 ]
 
