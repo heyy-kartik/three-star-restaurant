@@ -20,13 +20,35 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { EmblaOptionsType } from "embla-carousel";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+
 import {
   PrevButton,
   NextButton,
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButton";
 import "./embla.css";
+import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 
+export function LayoutTextFlipDemo() {
+  return (
+    <div>
+      <motion.div className="relative mx-4 my-4 flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row">
+        <LayoutTextFlip
+          text="We Serve "
+          words={[
+            "At Night(24/7)",
+            "You Love to Eat",
+            "Veg/Non-Veg",
+            "Food Cravings at Night",
+          ]}
+        />
+      </motion.div>
+      <p className="mt-4 text-center text-base text-neutral-600 dark:text-neutral-400">
+        Special 10% OFF On All First Order *Terms and Conditions Apply.
+      </p>
+    </div>
+  );
+}
 export function NavbarDemo() {
   const navItems = [
     {
@@ -237,9 +259,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Experience exceptional cuisine crafted with passion and served
-              with excellence. Where every meal becomes a memorable celebration
-              of taste and elegance.
+              <LayoutTextFlipDemo />
             </motion.p>
 
             {/* Buttons */}

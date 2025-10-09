@@ -7,7 +7,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 // and the custom 'Button' component if you are using a standard HTML structure.
 
 export default function FloatingPhoneButton() {
-  const phoneNumber = "+919766646790"; // Define the number once
+  const phoneNumber = "+919168377416"; // Define the number once
 
   return (
     <motion.div

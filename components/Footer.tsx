@@ -26,7 +26,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-2xl font-bold mb-4 text-orange-400">
-              Three Star Restaurant
+              3 Star Restaurant
             </h3>
             <p className="text-gray-300 mb-4">
               Experience exceptional cuisine crafted with passion and served
@@ -139,9 +139,9 @@ export default function Footer() {
                 <Clock className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">
-                    <span className="font-semibold">Monday - Friday:</span>
+                    <span className="font-semibold">Monday - Sunday:</span>
                   </p>
-                  <p className="text-gray-300">11:00 AM - 10:00 PM</p>
+                  <p className="text-gray-300">6:00pm to 5:00am</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -150,7 +150,7 @@ export default function Footer() {
                   <p className="text-gray-300">
                     <span className="font-semibold">Saturday - Sunday:</span>
                   </p>
-                  <p className="text-gray-300">10:00 AM - 11:00 PM</p>
+                  <p className="text-gray-300">6:00pm to 5:00am</p>
                 </div>
               </div>
             </div>
@@ -166,10 +166,10 @@ export default function Footer() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <p className="text-gray-400">
-            © {currentYear} Three Star Restaurant. All rights reserved.
+            © {currentYear} 3 Star Restaurant. All rights reserved.
           </p>
           <p className="text-gray-500 text-sm mt-2">
-            Designed with ❤️ for food lovers
+            Designed with ❤️ Of Kartik Jagdale
           </p>
         </motion.div>
       </div>
