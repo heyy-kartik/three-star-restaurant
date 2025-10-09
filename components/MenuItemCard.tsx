@@ -55,16 +55,16 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
       transition={{ duration: 0.5 }}
       whileHover={{ y: -5 }}
     >
-      <Card className="overflow-hidden  w-[400px] flex flex-col flex-wrap justify-between align-middle transition-shadow">
+      <Card className="overflow-hidden  w-[400px] flex flex-col flex-wrap justify-between align-middle">
         <div className="relative h-48 overflow-hidden">
           <Image
             src={item.image}
             alt={item.name}
             fill
-            className="object-cover transition-transform duration-300 hover:scale-110"
+            className="object-cover transition-transform duration-300 hover:scale-105"
           />
           {item.popular && (
-            <div className="absolute top-2 right-2 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            <div className="absolute top-2 right-2 bg-orange-500 text-white px-3 py-1 rounded-md text-sm font-semibold">
               Popular
             </div>
           )}
@@ -73,7 +73,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
             <span>{item.name}</span>
-            <span className="text-orange-600 text-xl">₹{item.price}</span>
+            <span className="text-green-600 text-xl">₹{item.price}</span>
           </CardTitle>
           <CardDescription>{item.description}</CardDescription>
         </CardHeader>

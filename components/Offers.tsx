@@ -60,7 +60,7 @@ export default function Offers() {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-12"
         >
-          <Card className="max-w-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="max-w-md overflow-hidden  hover:shadow-xl transition-shadow duration-300">
             <div className="relative">
               <Image
                 src="/carosual-1.jpg"
@@ -86,7 +86,7 @@ export default function Offers() {
             <CardContent>
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <Clock className="w-4 h-4" />
-                <span>Valid until December 31, 2024</span>
+                <span>Valid until November 30, 2025</span>
               </div>
               <div className="flex items-center gap-2 mt-2">
                 <Tag className="w-4 h-4 text-orange-600" />

@@ -4,10 +4,10 @@ export const sampleMenuItems: MenuItem[] = [
   // Appetizers
   {
     name: "Chai",
-    description: "Toasted bread topped with fresh tomatoes, basil, and mozzarella",
+    description: "Traditional Indian spiced tea brewed to perfection",
     category: "Snack",
     price: 15,
-    image: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=800&q=80",
+    image: "/chai.jpeg" , 
     popular: true,
     rating: 4.5,
     reviews: [
@@ -32,7 +32,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Rich and aromatic coffee brewed to perfection",
     category: "Snack",
     price: 25,
-    image: "https://images.unsplash.com/photo-1511920170033-4b8c8c8c8c8c?w=800&q=80",
+    image: "/hot-coffeee.jpg",
     rating: 4.5,
     reviews: [
       {
@@ -50,90 +50,90 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Chilled coffee blended with ice and milk",
     category: "Snack",
     price: 29,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/cold-coffeee.jpg",
     rating: 4.7,
   },
   {
     name: "Tandori Burger",
-    description: "Chilled coffee blended with ice and milk",
+    description: "Spicy tandoori flavored burger with fresh vegetables",
     category: "Snack",
     price: 59,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/tanduri-burger..jpg",
     rating: 4.7,
   },
   {
     name: "Cheese Burger",
-    description: "Chilled coffee blended with ice and milk",
+    description: "Juicy burger with melted cheese and fresh toppings",
     category: "Snack",
     price: 70,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/cheese-burger.avif",
     rating: 4.7,
   },
   {
     name: "Aloo Tikki Burger",
-    description: "Chilled coffee blended with ice and milk",
+    description: "Crispy potato patty burger with spicy chutneys",
     category: "Snack",
     price: 59,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/aloo-tikki-burger.jpeg.jpg",
     rating: 4.7,
   },
   //maggi 
    {
     name: "Plain Maggi",
-    description: "Chilled coffee blended with ice and milk",
+    description: "Simple and delicious instant noodles",
     category: "Maggi",
     price: 39,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/palain-maggie.jpg",
     rating: 4.7,
   },
    {
     name: "Masala Maggi / Peri Peri maggi",
-    description: "Chilled coffee blended with ice and milk",
+    description: "Spicy masala or peri peri flavored instant noodles",
     category: "Maggi",
     price: 49,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/masala maggie.jpeg.jpg",
     rating: 4.7,
   },
    {
     name: "Veggy Maggi",
-    description: "Chilled coffee blended with ice and milk",
+    description: "Maggi loaded with fresh vegetables",
     category: "Maggi",
     price: 59,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/veggy mahhie.jpeg.jpg",
     rating: 4.7,
   },
    {
     name: "Cheese Maggi",
-    description: "Chilled coffee blended with ice and milk",
+    description: "Creamy cheese maggi with extra richness",
     category: "Maggi",
     price: 59,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/cheese-maggie.jpg",
     rating: 4.7,
   },
    {
     name: "Tadka Maggi",
-    description: "Chilled coffee blended with ice and milk",
+    description: "Maggi with special Indian tadka and spices",
     category: "Maggi",
     price: 69,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/tadka-maggie.jpg",
     rating: 4.7,
   },
    {
     name: "Anda tadka maggi",
-    description: "Chilled coffee blended with ice and milk",
+    description: "Maggi with egg tadka for extra protein",
     category: "Maggi",
     price: 89,
-    image: "https://images.unsplash.com/photo-1619366044214-29704f5e9d74?w=800&q=80",
+    image: "/anda tadka maggie.jpeg.jpg",
     rating: 4.7,
   },
  
   // Main Course
   {
     name: "Pohe",
-    description: "Atlantic salmon grilled to perfection with lemon butter sauce",
+    description: "Traditional flattened rice dish with spices and peanuts",
     category: "Snack",
     price: 25,
-    image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80",
+    image: "/pohe.jpg",
     popular: true,
     rating: 4.8,
     reviews: [
@@ -155,10 +155,10 @@ export const sampleMenuItems: MenuItem[] = [
   },
   {
     name: "Plain Omlette",
-    description: "12oz premium ribeye with garlic mashed potatoes and vegetables",
+    description: "Simple and fluffy plain omelette",
     category: ["Main Course", "Non Veg"],
     price: 39,
-    image: "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+    image: "/lain omlette.webp",
     popular: true,
     rating: 4.9,
     reviews: [
@@ -172,10 +172,10 @@ export const sampleMenuItems: MenuItem[] = [
     ]
   },{
     name: "Veg Shezwan Rice + Dry Manchurain +1 Coke",
-    description: "12oz premium ribeye with garlic mashed potatoes and vegetables",
-    category: ["Main Course", "Non Veg" , "Combos"],
+    description: "Complete combo meal with spicy rice, manchurian and cold drink",
+    category: ["Main Course", "Veg" , "Combos"],
     price: 169,
-    image: "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+    image: "/veg-shezwan-rice.jpg",
     popular: true,
     rating: 4.9,
     reviews: [
@@ -183,17 +183,17 @@ export const sampleMenuItems: MenuItem[] = [
         id: "6",
         author: "Vaibhav Jadhav",
         rating: 5,
-        comment: "Melt-in-your-mouth tender. Worth every penny!",
+        comment: "Great value combo meal!",
         date: "2024-01-20"
       }
     ]
   },
   {
     name: "Burger + Fries + Coke",
-    description: "12oz premium ribeye with garlic mashed potatoes and vegetables",
-    category: ["Main Course", "Non Veg" , "Combos"],
+    description: "Classic combo with burger, crispy fries and cold drink",
+    category: ["Main Course", "Combos"],
     price: 135,
-    image: "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+    image: "/cheese-burger.avif",
     popular: true,
     rating: 4.9,
     reviews: [
@@ -201,17 +201,17 @@ export const sampleMenuItems: MenuItem[] = [
         id: "6",
         author: "Vaibhav Jadhav",
         rating: 5,
-        comment: "Melt-in-your-mouth tender. Worth every penny!",
+        comment: "Perfect combo meal!",
         date: "2024-01-20"
       }
     ]
   },
   {
     name: "Chicken Shezwan Rice + Chicken Chilli + Coke",
-    description: "12oz premium ribeye with garlic mashed potatoes and vegetables",
+    description: "Non-veg combo with spicy chicken rice, chilli chicken and drink",
     category: ["Main Course", "Non Veg" , "Combos"],
     price: 235,
-    image: "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+    image: "/chicken-shezwan-fried-rice.jpg",
     popular: true,
     rating: 4.9,
     reviews: [
@@ -229,7 +229,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Spicy scrambled eggs served with buttered pav",
     category: ["Main Course", "Non Veg"],
     price:59,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    image: "/anda bhurji pav.webp",
     rating: 4.6,
     reviews: [
       {
@@ -243,10 +243,10 @@ export const sampleMenuItems: MenuItem[] = [
   },
    {
     name: "Anda Bread ",
-    description: "Spicy scrambled eggs served with buttered pav",
+    description: "Egg bread - simple and satisfying",
     category: ["Non Veg"],
     price:49,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    image: "/anda-bread.jpg",
     rating: 4.2,
     reviews: [
       {
@@ -264,24 +264,24 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Crispy French fries seasoned with salt",
     category: "Snack",
     price: 79,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    image: "/salted-fries.jpg",
     rating: 4.6,
     reviews: [
       {
         id: "7",
         author: "Vishal gaikwad",
         rating: 5,
-        comment: "Authentic Italian taste. So creamy and delicious!",
+        comment: "Perfectly crispy!",
         date: "2024-01-16"
       }
     ]
   },
   {
     name: "Peri peri Fries",
-    description: "Spicy scrambled eggs served with buttered pav",
+    description: "Spicy peri peri seasoned crispy fries",
     category: "Snack",
     price: 79,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    image: "/peri-fries.jpeg.jpg",
     rating: 4.6,
     reviews: [
       {
@@ -296,27 +296,27 @@ export const sampleMenuItems: MenuItem[] = [
   // Veg + Snack
   {
     name: "VEG Sandwich ",
-    description: "Spicy scrambled eggs served with buttered pav",
+    description: "Fresh vegetable sandwich with Indian spices",
     category: ["Snack","Veg"],
     price: 49,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    image: "/grill.jpg",
     rating: 4.6,
     reviews: [
       {
         id: "7",
         author: "Vishal gaikwad",
         rating: 5,
-        comment: "Authentic Italian taste. So creamy and delicious!",
+        comment: "Fresh and tasty!",
         date: "2024-01-16"
       }
     ]
   },
    {
     name: "VEG Manchurian (Dry)  ",
-    description: "Spicy Manchurian balls served with schezwan sauce",
+    description: "Spicy Manchurian balls served dry style",
     category: ["Snack","Veg"],
     price: 100 ,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    image: "/dry.jpg",
     rating: 4.6,
     reviews: [
       {
@@ -330,27 +330,27 @@ export const sampleMenuItems: MenuItem[] = [
   },
    {
     name: "VEG Manchurain Gravy  ",
-    description: "Spicy scrambled eggs served with buttered pav",
+    description: "Manchurian balls in rich gravy sauce",
     category: ["Snack","Veg"],
     price: 110 ,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    image: "/manchurian.jpg",
     rating: 4.6,
     reviews: [
       {
         id: "7",
         author: "Vishal gaikwad",
         rating: 5,
-        comment: "Authentic Italian taste. So creamy and delicious!",
+        comment: "Rich and flavorful gravy!",
         date: "2024-01-16"
       }
     ]
   },
    {
     name: "VEG Paneer Chilli  ",
-    description: "Spicy scrambled eggs served with buttered pav",
+    description: "Spicy paneer cubes with bell peppers and onions",
     category: ["Snack","Veg"],
     price: 150 ,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    image: "/paneerchilli.jpg",
     rating: 4.6,
     reviews: [
       {
@@ -366,8 +366,8 @@ export const sampleMenuItems: MenuItem[] = [
     name: "VEG Paneer Crispy  ",
     description: "Spicy scrambled eggs served with buttered pav",
     category: ["Snack","Veg"],
-    price: 150,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    price: 149,
+    image: "/paneercrispy.jpg",
     rating: 4.6,
     reviews: [
       {
@@ -385,7 +385,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Grilled sandwich with mixed vegetables and cheese",
     category: ["Snack","Veg"],
     price: 69,
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
+    image: "/grill.jpg",
     rating: 4.6,
     reviews: [
       {
@@ -402,7 +402,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Breaded chicken breast with marinara sauce and melted cheese",
     category: ["Main Course","Veg"],
     price: 89,
-    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
+    image: "/chicken-triple-rice.jpg",
     rating: 4.4,
   },
    {
@@ -410,7 +410,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Breaded chicken breast with marinara sauce and melted cheese",
     category: ["Main Course","Veg"],
     price: 89,
-    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
+    image: "/singapore-fried-rice.webp",
     rating: 4.4,
   },
    
@@ -418,8 +418,8 @@ export const sampleMenuItems: MenuItem[] = [
     name: "VEG Manchurian Rice",
     description: "Breaded chicken breast with marinara sauce and melted cheese",
     category: ["Main Course","Veg"],
-    price: 22.99,
-    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80",
+    price: "90/140",
+    image: "",
     rating: 4.4,
   },
   // veg + MAIN COURSE 
@@ -427,8 +427,8 @@ export const sampleMenuItems: MenuItem[] = [
     name: "Veg Shejwan Rice",
     description: "Classic Italian dessert with coffee-soaked ladyfingers and mascarpone",
     category: ["Main Course", "Veg"],
-    price: 9.99,
-    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80",
+    price: "90 / 140",
+    image: "/veg-shezwan-rice.jpg",
     popular: true,
     rating: 4.7,
     reviews: [
@@ -445,8 +445,8 @@ export const sampleMenuItems: MenuItem[] = [
     name: "Veg Fried Rice",
     description: "Warm chocolate cake with a molten center, served with vanilla ice cream",
     category: ["Main Course", "Veg"],
-    price: 11.99,
-    image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=800&q=80",
+    price: "80/ 130",
+    image: "/veg-fried-rice.webp",
     rating: 4.8,
     reviews: [
       {
@@ -462,8 +462,8 @@ export const sampleMenuItems: MenuItem[] = [
     name: "Veg Noodles",
     description: "Creamy vanilla custard with caramelized sugar topping",
     category: ["Main Course","Veg"],
-    price: 10.99,
-    image: "https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=800&q=80",
+    price: "80/130",
+    image: "/veg-noodle.jpg",
     rating: 4.6,
   },
   // Beverages
@@ -471,16 +471,16 @@ export const sampleMenuItems: MenuItem[] = [
     name: "Coke / Pepsi",
     description: "House-made lemonade with fresh lemons and mint",
     category: "Snack",
-    price: 20,
-    image: "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9f?w=800&q=80",
+    price: 25,
+    image: "/coke.jpeg",
     rating: 4.3,
   },
   {
     name: "Chicken Noodles",
     description: "Rich Italian espresso made from premium coffee beans",
     category: "Non Veg ",
-    price: 3.99,
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    price: "100 / 150",
+    image: "/chicken-noodl.jpg",
     rating: 4.5,
   },
    {
@@ -488,7 +488,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Rich Italian espresso made from premium coffee beans",
     category: "Non Veg ",
     price: "100 / 170 ",
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    image: "/chicken-lollypop.jpg",
     rating: 4.5,
   },
    {
@@ -496,7 +496,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Rich Italian espresso made from premium coffee beans",
     category: "Non Veg ",
     price: 149 ,
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    image: "/chicken-65.jpg",
     rating: 4.5,
   },
    {
@@ -504,15 +504,15 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Rich Italian espresso made from premium coffee beans",
     category: "Non Veg ",
     price: 149 ,
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    image: "/chiken-chilli.jpg",
     rating: 4.5,
   },
    {
     name: "Chicken Crispy ",
     description: "Rich Italian espresso made from premium coffee beans",
     category: "Non Veg ",
-    price: 3.99,
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    price: 149,
+    image: "/chicken-crispy.jpg",
     rating: 4.5,
   },
   
@@ -521,7 +521,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Rich Italian espresso made from premium coffee beans",
     category: "Non Veg ",
     price: "110 / 160" ,
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    image: "/chicken-shezwan-fried-rice.jpg",
     rating: 4.5,
   },
   {
@@ -529,7 +529,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Rich Italian espresso made from premium coffee beans",
     category: "Non Veg ",
     price: "130 / 160",
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    image: "/chicken-tripple-noodle.jpg",
     rating: 4.5,
   },
   {
@@ -537,7 +537,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Rich Italian espresso made from premium coffee beans",
     category: "Non Veg ",
     price: "110 / 160",
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    image: "/singapore-fried-rice.webp",
     rating: 4.5,
   },
   {
@@ -545,7 +545,7 @@ export const sampleMenuItems: MenuItem[] = [
     description: "Rich Italian espresso made from premium coffee beans",
     category: "Non Veg ",
     price: "100 / 150",
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    image: "/checken-fried-rice.jpg",
     rating: 4.5,
   },
   

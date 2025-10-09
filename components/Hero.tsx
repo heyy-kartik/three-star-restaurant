@@ -244,6 +244,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-1 lg:order-2 text-center lg:text-left"
           >
+            <motion.h3 className="text-lg md:text-xl font-semibold mb-4 text-orange-600">
+              ✨ Raat Ki Food Cravings At your DoorStep{" "}
+            </motion.h3>
             <motion.h1
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-orange-800 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 20 }}
@@ -254,7 +257,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
+              className="text-xl md:text-2xl text-black mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}

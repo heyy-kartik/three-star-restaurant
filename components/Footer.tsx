@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -105,12 +106,12 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
+                <FaWhatsapp className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
                 <a
-                  href="mailto:info@threestar.com"
+                  href="https://wa.me/919168377416"
                   className="text-gray-300 hover:text-orange-400 transition-colors"
                 >
-                  info@threestar.com
+                  Chat on WhatsApp
                 </a>
               </li>
               <li className="flex items-start gap-3">
