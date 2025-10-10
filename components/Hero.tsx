@@ -244,6 +244,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-1 lg:order-2 text-center lg:text-left"
           >
+            <h2 className="text-xl md:text-xl font-semibold mb-3 text-orange-400">
+              Restaurant open 24/7 || Home-Delivery Available in Night(6:00 PM
+              to 5:00 AM)
+            </h2>
             <motion.h3 className="text-lg md:text-xl font-semibold mb-4 text-orange-600">
               ✨ Raat Ki Food Cravings At your DoorStep{" "}
             </motion.h3>

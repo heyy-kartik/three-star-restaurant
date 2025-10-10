@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MessageCircle, Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -89,11 +90,11 @@ export default function Contact() {
               </CardHeader>
               <CardContent>
                 <a
-                  href="tel:+919766646790"
+                  href="tel:+919168377416"
                   className="text-orange-600 hover:text-orange-700 font-semibold flex items-center gap-2"
                 >
                   <Phone className="w-4 h-4" />
-                  +919766646790
+                  +919168377416/ +919284777416
                 </a>
               </CardContent>
             </Card>
@@ -101,20 +102,23 @@ export default function Contact() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                  <Mail className="w-6 h-6 text-orange-600" />
+                  <FaWhatsapp className="w-6 h-6 text-orange-600" />
                 </div>
-                <CardTitle>Email Us</CardTitle>
+                <CardTitle>Chat With Us On Whatsapp</CardTitle>
                 <CardDescription>
-                  We&apos;ll get back to you within 24 hours
+                  We&apos;ll get back to you within 1 hour
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <a
-                  href="mailto:info@threestar.com"
-                  className="text-orange-600 hover:text-orange-700 font-semibold flex items-center gap-2"
+                  href="https://wa.me/919168377416"
+                  className="text-black-300  hover:text-orange-400 flex items-center transition-colors"
                 >
-                  <Mail className="w-4 h-4" />
-                  info@threestar.com
+                  <FaWhatsapp className="w-5 h-5 mr-4 text-xl text-orange-400 mt-1 flex justify-evenly" />
+                  <h3 className="text-lg text-orange-500  hover:text-orange-700 font-semibold flex items-center gap-2">
+                    {" "}
+                    Chat on WhatsApp
+                  </h3>
                 </a>
               </CardContent>
             </Card>
