@@ -18,7 +18,6 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { EmblaOptionsType } from "embla-carousel";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 
 import {
@@ -113,7 +112,7 @@ export function NavbarDemo() {
 
 // Hero Carousel Component
 const HeroCarousel = () => {
-  const options: EmblaOptionsType = { loop: true };
+  const options = { loop: true };
 
   const slides = [
     {

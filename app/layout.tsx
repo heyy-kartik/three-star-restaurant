@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "3 Star Restaurant - Fine Dining Experience",
   description:
     "Experience exceptional cuisine with our carefully curated menu and outstanding service",
+  icons: {
+    icon: "/logo3-star.jpg", // /icon.png is the public path to your file
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
