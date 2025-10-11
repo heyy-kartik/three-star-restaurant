@@ -31,8 +31,8 @@ export default function Footer() {
             </h3>
             <p className="text-gray-300 mb-4">
               Experience exceptional cuisine crafted with passion and served
-              with excellence. We&apos;re committed to providing unforgettable
-              dining experiences.
+              with excellence. We&apos;re here just in the Campus (Polyhub)
+              Vadgaon Budruk.
             </p>
           </motion.div>
 
