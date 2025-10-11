@@ -161,7 +161,7 @@ To use the database:
 
 ## 🛠️ Technologies
 
-- **Framework:** Next.js 14
+- **Framework:** Next.js 15 (App router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **UI Components:** shadcn/ui
@@ -181,7 +181,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📧 Contact
 
 For questions or support, reach out to:
-- Email: info@threestar.com
+
 - Phone: +919168377416
 
 ---
