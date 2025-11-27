@@ -96,9 +96,9 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300">+919168377416</p>
+                  <p className="text-gray-300">+919284777416</p>
                   <a
-                    href="tel:+919168377416"
+                    href="tel:+919284777416"
                     className="text-sm text-orange-400 hover:underline"
                   >
                     Call Now
@@ -108,7 +108,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <FaWhatsapp className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
                 <a
-                  href="https://wa.me/919168377416"
+                  href="https://wa.me/+919284777416"
                   className="text-gray-300 hover:text-orange-400 transition-colors"
                 >
                   Chat on WhatsApp
